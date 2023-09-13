@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:55:39 by irodrigo          #+#    #+#             */
-/*   Updated: 2023/09/13 13:40:21 by irodrigo         ###   ########.fr       */
+/*   Updated: 2023/09/13 13:58:40 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,16 @@ void PmergeMe::loadStructs(std::string line_elm)
 void PmergeMe::display(int moment)
 {
 	if (moment== FIRST)
-		std::cout << "Before: " << this->getlist(this->my_list) << std::endl;
-
+	{
+		std::cout << "Before: " << std::endl;
+		std::cout << "\t std::list: \t" ;
+		this->getlist(my_list);
+		std::cout << "\t std::vector: \t";
+		this->getlist(my_vector);
+		std::cout << std::endl;
+	}
+	if (moment == LAST)
+		std::cout << "hola esto es una prueba " << std::endl;
 }
 
 
@@ -81,12 +89,16 @@ void PmergeMe::mergeOrder (int type)
 	{
 		_start = clock();  // tomamos referencia inicial de tiempos para vector
 		// ordenamos el vector y tomamos diferencias de tiempos
-		this->mergeInsertionSort(type);
+		std::cout << "prueba1" << std::endl;
+		//this->mergeInsertionSort(type);
 	}
 	else
+	{
 		_start = clock();
 		// ordenamos la cola y tomamos las diferencias de tiempos
-		this->mergeInsertionSort(type);
+		std::cout << "prueba2 " << _start << std::endl;	
+		//this->mergeInsertionSort(type);
+	}
 }
 
 // void mergeInsertionSort(int type)
@@ -119,7 +131,7 @@ template <typename T>
 void PmergeMe::getlist (const T& elm)
 {
 	typename T::const_iterator it;
-    for (it = container.begin(); it != container.end(); ++it)
+    for (it = elm.begin(); it != elm.end(); ++it)
         std::cout << *it << " ";
     std::cout << std::endl;
 
