@@ -1,0 +1,174 @@
+
+// public class functions
+
+// // function That compares and convert dates to double values
+// int BitcoinExchange::date_to_int( const std::string& date_str )
+// {
+//     std::stringstream stm(date_str) ;
+// 	std::string mm, dd, yyyy;
+//     int m, d, y;
+
+// 	getline(stm, yyyy, '-');
+// 	y = atoi(yyyy.c_str());
+// 	getline(stm, mm, '-');
+// 	m = atoi(mm.c_str());
+// 	getline(stm, dd);
+// 	d = atoi(dd.c_str());
+
+//    	// if required, validate that the values yyyy, mm and dd form a valid date
+// 	if (m < 1 || m > 12)
+// 		return (0);
+// 	if ( m == 2 && ((y % 4 == 0) && ((y % 100 != 0) || (y % 400 == 0))))
+// 	{	
+// 		if (d < 0 || d > 29)
+// 			return (0);
+// 	}
+// 	else
+// 	{
+// 		if (d < 0 || d > 28)
+// 			return (0);
+// 	}
+// 	if (m == 4 || m == 6 || m == 9 || m == 11)
+// 	{
+// 		if (d < 0 || d > 30)
+// 			return (0);
+// 	}
+// 	if (d < 0 || d > 31)
+// 		return (0);
+// 	return y * 10000 + m * 100 + d ; // form the int and return it
+// }
+
+// double BitcoinExchange::date_to_dbl( const std::string& date_str ) { return date_to_int(date_str) ; }
+
+
+// std::string BitcoinExchange::convertDate(int actDate)
+// {
+// 	std::string fecha;
+// 	int total;
+// 	int year;
+// 	int month;
+// 	int day;
+
+// 	std::cout << actDate << std::endl;
+
+// 	std::cout << "la fecha que llega es: " << actDate << std::endl << std::endl;
+
+// 	year = (actDate / 10000);
+// 	total = actDate - (year * 10000);
+
+// 	std::cout << "el total es: " << total << std::endl;
+// 	month = (total / 100);
+// 	day = total - (month * 100);
+// 	// cuidado con lo que se recibe aqui y el motivo de ello.
+// 	// si no se recibe bien, no sacamos una fecha correcta.
+// 	// tenemos que revisar el resultado.
+
+// 	fecha = std::to_string(year);
+// 	// if month < 10 add 0 digit before
+
+// 	if (month < 10)
+// 		fecha += "-0";
+// 	else
+// 		fecha += "-";
+// 	fecha +=std::to_string(month);
+// 	if (day < 10)
+// 		fecha += "-0";
+// 	else
+// 		fecha += "-";
+// 	fecha += std::to_string(day);
+// 	return fecha;
+// }
+
+
+// // excepcion que nos devuelva errores en el caso de tener problemas de fecha
+
+// // excepcion que nos devuelve errores de cantidad
+
+
+	// std::cout << "linea completa: " << linea << std::endl << std::endl;
+
+	// if (year < 1000 || year > 9999)
+	// {
+	// 	std::cout << "Error: Bad year in line" << std::endl;
+	// 	return (false);
+	// }
+
+	//std::cout << check_text(date);
+
+
+
+	// // get comparison map value
+// void BitcoinExchange::GetMapValue(std::string mydata) 
+// {
+// 	std::map<int, float>::iterator itlow, itup;
+// 	std::string data;
+// 	std::string viewDate;
+// 	int mydate;
+// 	float value;
+// 	mydate = 0; 
+
+// 	std::stringstream input_stringstream(mydata);
+// 	getline(input_stringstream, data, '|');
+// 	// mydate = date_to_int(data);
+// 	getline(input_stringstream,data);
+// 	value = std::stof(data);
+// 	if (value < 0)
+// 	{
+// 		std::cerr << "Error: not a positive number" << std::endl;
+// 		return;
+// 	}
+// 	for (itlow =this->_MyMap.begin(); itlow != this->_MyMap.end(); ++itlow){
+// 		if (itlow->first > mydate)
+// 		{
+// 			--itlow;
+// 			break;
+// 		}
+// 	}
+// 	if (itlow->first == 0)
+// 	{
+// 		std::cerr << "Error: Date has previous to first file value" << std::endl;
+// 		return;
+// 	}
+// 	if (value <= 1000)
+// 	{
+// 		//viewDate = this->convertDate(itlow->first);
+// 		std::cout << viewDate << " => " << value << " = " << (itlow->second * value) << std::endl;
+// 	}
+// 	else
+// 	{
+// 		std::cerr << "Error: too large number" << std::endl;
+// 		return;
+// 	}
+// 	//std::cout << itlow->first << " Resultado: " << itlow->second * value << std::endl;
+// }
+
+
+
+
+// std::cout << itlow->first << std::endl;
+	
+	// if (itlow->first == 0)
+	// {
+	// 	std::cerr << "Error: Date has previous to first file value" << std::endl;
+	// 	return;
+	// }
+
+
+
+	//while (getline(archivo, linea))
+    	// Lo vamos imprimiendo
+		//mybtc.fillData(linea);
+		//mybtc.GetVectorValue(linea);
+
+
+	// obtain correct date of btc movement
+   	
+	
+		//std::cout << "Una línea: " << linea << std::endl;
+
+
+//		# include <poll.h>
+
+// # include "Macro.hpp"
+
+// # include "Numerical_replies.hpp"

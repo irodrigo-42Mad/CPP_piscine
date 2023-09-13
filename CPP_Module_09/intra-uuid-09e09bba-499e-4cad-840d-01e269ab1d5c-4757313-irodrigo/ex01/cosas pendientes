@@ -1,0 +1,8 @@
+longitud de los parámetros cuando están vacios provocan un segfault (SOLUCIONADO).
+
+comprobación de la STACK al devolver el resultado tiene que tener un solo valor final (SOLUCIONADO).
+
+los valores recogidos de la linea de comandos solo deben de tener una longitud de 1 no se dividen ().
+
+cambio en el mensaje de comprobacion de los datos introducidos.
+
