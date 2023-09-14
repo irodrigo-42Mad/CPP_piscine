@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:55:49 by irodrigo          #+#    #+#             */
-/*   Updated: 2023/09/13 13:46:58 by irodrigo         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:23:43 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,20 @@ int main (int argc, char **argv)
 		else
 			return (-1);
 	}
+	// modificando la introducción de datos.
+	element.loadStructs (argc, argv);
 
-	element.loadStructs (tokens);
+
+
 	element.display(FIRST);
-	//element.getlist (FIRST, tokens);
 	element.mergeOrder (VCT);
 	element.getTime(VCT);
+
+
 	element.mergeOrder (LST);
 	element.getTime(LST);
 	element.display(LAST);
-	//element.getlist(LAST, "\0");
+	//element.diference();
 }
 
 std::string check_elm(std::string elm)

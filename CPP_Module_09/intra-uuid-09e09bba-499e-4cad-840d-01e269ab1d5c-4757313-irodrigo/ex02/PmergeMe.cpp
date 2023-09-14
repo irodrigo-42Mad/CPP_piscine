@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:55:39 by irodrigo          #+#    #+#             */
-/*   Updated: 2023/09/13 13:58:40 by irodrigo         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:40:32 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,61 @@ PmergeMe::PmergeMe(){}
 
 PmergeMe::~PmergeMe(){}
 
-void PmergeMe::loadStructs(std::string line_elm)
+void PmergeMe::loadStructs(int counter, char **value)
 {
-	std::stringstream ss(line_elm);
-    std::string token;
-	char tmp[25];
-
+	int nval = 0;
+	
 	std::cout << std::endl << "generating unordered structs: ";
-	while (getline(ss, token, ' '))
-    {
-		int i = 0;
-		while (token[i] != '\0')
-		{	
-			std::strcpy(tmp, &token[i]);
-			i++;
+	for (register int i = 1; i < counter; i++)
+	{
+		nval = atoi(value[i]);
+		if (nval > INT_MAX)
+		{
+			// debemos comprobar correctamente el rango de los enteros
+			std::cout << "Value provided out of int valid range" << std::endl;
+			exit(-1);
 		}
-		this->my_vector.push_back(std::atoi(tmp));
-		this->my_list.push_back(std::atoi(tmp));
+		this->my_vector.push_back(nval);
+		this->my_list.push_back(nval);
 	}
-	std::cout << "\033[1;32mSuccesfull\033[0m loaded." << std::endl << std::endl;
+	std::cout << "\033[1;32mSuccesfull\033[0m loaded " << counter - 1 << " elements." << std::endl << std::endl;
+}
+
+void PmergeMe::mergeInsertionSort (int type)
+{
+	int nval = -1;
+	if (type == VCT)
+	{
+		// Vector ordering
+		std::vector<int>::iterator it1, it2;
+		for (it1 = this->my_vector.begin() + 1; it1 != this->my_vector.end(); ++it1)
+		{
+			nval = *it1;
+        	it2 = it1;
+			while (it2 != this->my_vector.begin() && *(std::prev(it2)) > nval)
+			{
+				*it2 = *(std::prev(it2));
+            	std::advance(it2, -1);
+			}
+			*it2 = nval;
+		}
+	}
+	else
+	{
+		// list ordering
+		std::list<int>::iterator itl1, itl2;
+		for (itl1 = ++this->my_list.begin(); itl1 != this->my_list.end(); ++itl1)
+		{
+			nval = *itl1;	
+			itl2 = itl1;
+			while (itl2 != this->my_list.begin() && *(std::prev(itl2)) > nval)
+			{
+				*itl2 = *(std::prev(itl2));
+            	std::advance(itl2, -1);
+			}
+			*itl2 = nval;
+		}
+	}
 }
 		
 void PmergeMe::display(int moment)
@@ -49,37 +85,16 @@ void PmergeMe::display(int moment)
 		std::cout << std::endl;
 	}
 	if (moment == LAST)
-		std::cout << "hola esto es una prueba " << std::endl;
+	{
+		std::cout << std::endl << "After PMerge: " << std::endl;
+		std::cout << "\t std::list: \t" ;
+		this->getlist(my_list);
+		std::cout << "\t std::vector: \t";
+		this->getlist(my_vector);
+		std::cout << std::endl;
+
+	}
 }
-
-
-
-
-// void PmergeMe::getlist(int moment, std::string line_elm)
-// {
-// 	std::vector<int>::iterator ite = my_vector.end();
-// 	std::list<int>::iterator ilte = my_list.end();
-// 	// listamos los elementos que previamente se han colocado en la lista y el vector
-// 	if (moment == FIRST)
-// 		std::cout << "Before: " << line_elm << std::endl;
-// 	else
-// 	{
-// 		std::cout << std::endl << "elements after ordering" << std::endl;
-// 		// list ordered vector elements.
-// 		std::cout << "After using <vector> : " ;
-// 		for (std::vector<int>::iterator it = my_vector.begin();it !=ite; it++)
-// 			std::cout << *it << " ";
-
-// 		std::cout << std::endl;
-// 		// list ordered list elements.
-// 		std::cout << "After using <list> : " ;
-// 		for (std::list<int>::iterator ilt = my_list.begin(); ilt !=ilte; ilt++)
-// 			std::cout << *ilt << " ";
-
-// 		std::cout << std::endl;
-// 	}
-// 	// debemos revisar el último elemento de la lista y el vector para que no muestre un espacio extra.
-// }
 
 void PmergeMe::mergeOrder (int type)
 {
@@ -89,14 +104,15 @@ void PmergeMe::mergeOrder (int type)
 	{
 		_start = clock();  // tomamos referencia inicial de tiempos para vector
 		// ordenamos el vector y tomamos diferencias de tiempos
-		std::cout << "prueba1" << std::endl;
+		this->mergeInsertionSort(VCT);
 		//this->mergeInsertionSort(type);
 	}
 	else
 	{
 		_start = clock();
 		// ordenamos la cola y tomamos las diferencias de tiempos
-		std::cout << "prueba2 " << _start << std::endl;	
+		this->mergeInsertionSort(LST);
+		//std::cout << "prueba2 " << _start << std::endl;	
 		//this->mergeInsertionSort(type);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: irodrigo <irodrigo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:55:44 by irodrigo          #+#    #+#             */
-/*   Updated: 2023/09/13 13:41:12 by irodrigo         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:12:53 by irodrigo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ class PmergeMe
 		~PmergeMe();
 
 		// PUBLIC FUNCTIONS
-		void loadStructs(std::string line_elm);
+        // load system values
+        void loadStructs(int counter, char **value);
         // display elements
         template <typename T>
         void getlist (const T& elm);
@@ -50,8 +51,13 @@ class PmergeMe
         
         //void getlist(int moment, std::string line_elm);
 		void mergeOrder (int type);
+        //void mergeInsertionSort (int type);
+        
+        // used by class to order all elements and structures if possible
         void mergeInsertionSort (int type);
         void getTime(int type);
+
+        void diference (void);
 
         // EXCEPCIONES
         class PMergeMeNEGException : public std::exception {
