@@ -12,8 +12,9 @@ These instructions will permits you download and compile a copy of this proyect 
 or
 
 ```
-	go to https://github.com/irodrigo-42Mad/CPP_piscine.git and in the "Code" button, you can select download zip option and uncompress in your local machine.
+	go to https://github.com/irodrigo-42Mad/CPP_piscine.git 
 ```
+and in the "Code" button, you can select download zip option and uncompress in your local machine.
 
 ### Prerequisites
 
