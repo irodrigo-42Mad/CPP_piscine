@@ -7,12 +7,12 @@ A group of exercises aimed at learning the basic concepts of programming in the 
 These instructions will permits you download and compile a copy of this proyect on your local machine for development and testing purposes. See deployment for notes on how to deploy this proyect on a live system or network.
 
 ```
-	git clone https://github.com/irodrigo-42Mad/ft_irc.git
+	git clone https://github.com/irodrigo-42Mad/CPP_piscine.git
 ```
 or
 
 ```
-	go to https://github.com/irodrigo-42Mad/ft_irc.git and in the "Code" button, you can select download zip option and uncompress in your local machine.
+	go to https://github.com/irodrigo-42Mad/CPP_piscine.git and in the "Code" button, you can select download zip option and uncompress in your local machine.
 ```
 
 ### Prerequisites
