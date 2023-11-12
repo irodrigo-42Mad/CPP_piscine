@@ -20,7 +20,7 @@ and in the "Code" button, you can select download zip option and uncompress in y
 
 For the correct compilation and use of these functions we must have installed in the system the GNU GCC compiler as well as the make tool to be able to mount the library.
 
-```
+```bash
 	In OS X only need to have installed Xcode, the developer IDE from Apple. 
 	
 	$ xcode-select --install
