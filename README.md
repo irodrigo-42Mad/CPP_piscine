@@ -44,7 +44,7 @@ $ cd CPP_piscine/cpp00/ex00
 and do `make` and then run:
 
 ```bash
-./ex00 <modifyers> (if any)
+$ ./ex00 <modifyers> (if any)
 ```
 
 
