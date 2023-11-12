@@ -47,12 +47,26 @@ and do `make` and then run:
 $ ./ex00 <modifyers> (if any)
 ```
 
+## Built With
+
+* [GNU GCC](https://gcc.gnu.org) - The C Compiler used
+* [Xcode](https://developer.apple.com/xcode/) - IDE GUI Editor to deploy
+* [Visual Studio Code](https://code.visualstudio.com/docs/) - IDE GUI Editor to deploy
+* [VIM](https://www.vim.org/download.php) - Terminal Editor to deploy
+* [LLDB](https://lldb.llvm.org) - Debuger aplication
+* [leaks](https://lldb.llvm.org) - Check memory assigment and leak situations
+* [Valgrind](https://valgrind.org/) - Check memory assigment and leak situations
+* [Docker](https://www.docker.com/) - Container orchestrator
+
+## Versioning
+
+Version 1.0 
+
+## Authors
+
+* **Isaac Rodrigo** - *other repositories* - [irodrigo-42Mad](https://github.com/irodrigo-42Mad/)
 
 
-
-
-
-
-###notes
+###Other notes
 
 https://github.com/TalhaAksoy/42Cpp-Modules-09/blob/main/ex02/PmergeMe.cpp
