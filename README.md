@@ -67,6 +67,6 @@ Version 1.0
 * **Isaac Rodrigo** - *other repositories* - [irodrigo-42Mad](https://github.com/irodrigo-42Mad/)
 
 
-###Other notes
+### Other notes
 
 https://github.com/TalhaAksoy/42Cpp-Modules-09/blob/main/ex02/PmergeMe.cpp
