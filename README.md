@@ -2,7 +2,7 @@
 
 A group of exercises aimed at learning the basic concepts of programming in the C++ 98 language. This set of exercises covers classes, methods, scopes, inheritance, encapsulation, virtualization and basic development procedures in C++
 
-## Getting Started
+### Getting Started
 
 These instructions will permits you download and compile a copy of this proyect on your local machine for development and testing purposes. See deployment for notes on how to deploy this proyect on a live system or network.
 
