@@ -56,7 +56,6 @@ $ ./ex00 <modifyers> (if any)
 * [LLDB](https://lldb.llvm.org) - Debuger aplication
 * [leaks](https://lldb.llvm.org) - Check memory assigment and leak situations
 * [Valgrind](https://valgrind.org/) - Check memory assigment and leak situations
-* [Docker](https://www.docker.com/) - Container orchestrator
 
 ## Versioning
 
