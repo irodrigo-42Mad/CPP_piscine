@@ -24,16 +24,14 @@ For the correct compilation and use of these functions we must have installed in
 	In OS X only need to have installed Xcode, the developer IDE from Apple. 
 	
 	$ xcode-select --install
-
-	for Mac and Linux users, need install GCC compiler and developer tools using following commands:
-	
-	$ sudo apt install gcc
-	$ sudo apt install build-essential
-
-	after this you can compile this program correctly.
-
 ```
 
+for Mac and Linux users, need install GCC compiler and developer tools using following commands:
+```bash
+	$ sudo apt install gcc
+	$ sudo apt install build-essential
+```
+after this you can compile this program correctly.
 
 
 ## Run
