@@ -40,20 +40,13 @@ For the correct compilation and use of these functions we must have installed in
 Each of the statements has several exercises inside, organizing in a folder structure with the exercise name and inside each exercise number, to test each of the exercises and examples of this pool, we must do the following:
 
 Enter the main folder and then go to the desired number using the system `CD` command for example:
+```bash
+$ cd CPP_piscine/cpp00/ex00
 ```
-$
-
-```
-
-
-
-Change directory with `CD` command and them select exercise into primary structure like next procedures:
-
-
-Do `make` and then run :
+and do `make` and then run:
 
 ```bash
-./ft_irc <port> <password>
+./ex00 <modifyers>
 ```
 
 
